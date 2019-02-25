@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:icon="@drawable/ic_khampha"
+        android:title="khám phá"
+        android:id="@+id/id_khampha" />
+    <item
+        android:icon="@drawable/icon_camnang"
+        android:title="cẩm nang"
+        android:id="@+id/id_camnang" />
+    <item
+        android:icon="@drawable/ic_quanly"
+        android:title="quản lý"
+        android:id="@+id/id_quanly" />
+    <item
+        android:icon="@drawable/ic_lichsu"
+        android:title="lịch sử"
+        android:id="@+id/id_lichsu" />
+
+</menu>

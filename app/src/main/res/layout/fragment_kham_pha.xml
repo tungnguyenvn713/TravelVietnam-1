@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:indefinite_pager_indicator="http://schemas.android.com/apk/res-auto"
+    tools:context=".KhamPhaFragment"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+    android:id="@+id/id_re_thanhpho"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <com.rbrooks.indefinitepagerindicator.IndefinitePagerIndicator
+        android:id="@+id/recyclerview_pager_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
+        android:visibility="gone"
+        indefinite_pager_indicator:dotColor="@android:color/holo_red_dark"
+        indefinite_pager_indicator:selectedDotColor="@android:color/holo_red_dark"
+        indefinite_pager_indicator:verticalSupport="true"
+        tools:background="#f000"/>
+
+</LinearLayout>
