@@ -6,12 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
     <FrameLayout
         android:id="@+id/id_fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="459dp"
-        android:layout_above="@+id/id_bottom_view"></FrameLayout>
+        android:layout_height="match_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@+id/id_bottom_view" />
     <android.support.design.widget.BottomNavigationView
         app:itemTextColor="#ffffff"
         android:id="@+id/id_bottom_view"
@@ -21,6 +21,4 @@
         android:layout_gravity="bottom"
         android:background="#3d69d7"
         app:menu="@menu/bottom_navigationview_main" />
-
-
 </android.support.design.widget.CoordinatorLayout>

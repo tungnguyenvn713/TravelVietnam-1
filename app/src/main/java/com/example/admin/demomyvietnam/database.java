@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Build;
 import android.util.Log;
 
+import com.example.admin.demomyvietnam.entity.diadanh;
+import com.example.admin.demomyvietnam.entity.hinhanh;
+import com.example.admin.demomyvietnam.entity.thanhpho;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,6 +25,7 @@ public class database extends SQLiteOpenHelper {
     private String PATH="";
     private static String DB_NAME="Mvietnam.db";
     private Context mcontext=null;
+    private final String TAG="MYVIETNAM22";
 
     @SuppressLint("SdCardPath")
     public database(Context context) {
@@ -85,23 +90,69 @@ public class database extends SQLiteOpenHelper {
             CoppyDB();
         }
     }
-    public List<diadanh> getDiadanh(){
-        List<diadanh> diadiems=new ArrayList<>();
+    public List<hinhanh> getHinhanh(String idbydiadanh){
+        List<hinhanh> ha=new ArrayList<>();
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor c;
-        c=db.rawQuery("SELECT * FROM DIADANH",null);
+        c=db.rawQuery("SELECT * FROM HINHANH WHERE iddiadanh ='"+idbydiadanh+"'",null);
         c.moveToFirst();
         do{
-
-            //add data :v
-
-
+        //add data :v
+            getLong(c,c.getColumnIndex("hinhanh"));
+            int id=c.getInt(c.getColumnIndex("idhinhanh"));
+            int iddiadanh=c.getInt(c.getColumnIndex("iddiadanh"));
+            getLong(c,c.getColumnIndex("hinhanh"));
+            byte [] hinh=c.getBlob(c.getColumnIndex("hinhanh"));
+            ha.add(new hinhanh(id,iddiadanh,hinh));
 
         }while (c.moveToNext());
         c.close();
+        Log.d(TAG, "getHinhanh: "+ha.size());
+        return ha;
+    }
+    public List<diadanh> getDiadanh(String idbythanhpho){
+        List<diadanh> diadanhList=new ArrayList<>();
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor c;
+        c=db.rawQuery("SELECT * FROM DIADANH WHERE idthanhpho ='"+idbythanhpho+"'",null);
+        c.moveToFirst();
+        do{
+             //add data :v
+             int id=c.getInt(c.getColumnIndex("iddiadanh"));
+             int idthanhpho=c.getInt(c.getColumnIndex("idthanhpho"));
+             String ten=c.getString(c.getColumnIndex("tendiadanh"));
+             String mota=c.getString(c.getColumnIndex("motadiadanh"));
+             String loai=c.getString(c.getColumnIndex("loaidiadanh"));
+             String giave=c.getString(c.getColumnIndex("giave"));
+             String ngaymocua=c.getString(c.getColumnIndex("ngaymocua"));
+             String giomocua=c.getString(c.getColumnIndex("giomocua"));
+             List<hinhanh> hinhanhList =getHinhanh(String.valueOf(id));
+             diadanhList.add(new diadanh(id,idthanhpho,ten,mota,loai,giave,ngaymocua,giomocua,hinhanhList));
 
-        return diadiems;
+        }while (c.moveToNext());
+        c.close();
+        Log.d(TAG, "getDiadanh: "+diadanhList.size());
+        return diadanhList;
 
+    }
+    public int getLong( Cursor cursor, int columnIndex )
+    {
+        int value = 0;
+
+        try
+        {
+            if ( !cursor.isNull( columnIndex ) )
+            {
+                Log.d(TAG, "getLong " + columnIndex );
+                value = cursor.getInt( columnIndex );
+            }
+        }
+        catch ( Throwable tr )
+        {
+            Log.d(TAG, "getLong " + columnIndex, tr );
+        }
+
+        return value;
     }
 
     public List<thanhpho> getThanhPho(){
@@ -118,6 +169,7 @@ public class database extends SQLiteOpenHelper {
             thanhpho tp=new thanhpho(id,ten,blob);
             //add data :v
             tplist.add(tp);
+            blob=null;
 
 
         }while (c.moveToNext());

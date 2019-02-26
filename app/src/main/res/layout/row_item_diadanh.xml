@@ -26,7 +26,7 @@
         <ImageView
             android:id="@+id/id_item_diadanh_rate"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="310dp"
+            android:layout_marginLeft="290dp"
             android:src="@drawable/ic_heart_on"
             android:layout_width="40dp"
             android:layout_height="40dp" />

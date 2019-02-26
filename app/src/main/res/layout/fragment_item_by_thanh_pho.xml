@@ -1,15 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".ItemByThanhPhoFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ActionFragment.ItemByThanhPhoFragment">
 
+    <android.support.design.widget.AppBarLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary">
+        <SearchView
+            android:queryHint="Tìm kiếm điểm đến"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </SearchView>
+    </android.support.design.widget.AppBarLayout>
     <!-- TODO: Update blank fragment layout -->
   <android.support.v7.widget.RecyclerView
+      app:layout_behavior="@string/appbar_scrolling_view_behavior"
       android:id="@+id/id_"
+      android:layout_marginBottom="10dp"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
   </android.support.v7.widget.RecyclerView>
-
-</FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

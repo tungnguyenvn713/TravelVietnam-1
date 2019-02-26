@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/social/ic_public_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,11 +44,10 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="assetType" value="IMAGE" />
                                       <entry key="imageAsset" value="E:\ic_heart_on.png" />
-                                      <entry key="outputName" value="ic_heart_off" />
+                                      <entry key="outputName" value="ic_search" />
                                       <entry key="theme" value="CUSTOM" />
-                                      <entry key="themeColor" value="555a66" />
+                                      <entry key="themeColor" value="fff8fd" />
                                     </map>
                                   </option>
                                 </PersistentState>
