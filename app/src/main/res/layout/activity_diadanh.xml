@@ -5,6 +5,101 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DiadanhActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
+<ViewFlipper
+    android:id="@+id/id_item_diadanh_hinhanh"
+    android:layout_width="match_parent"
+    android:layout_height="300dp">
+
+
+</ViewFlipper>
+
+    <TextView
+        android:textSize="20sp"
+        android:textColor="#000000"
+        android:text="Phố cổ hội an"
+        android:id="@+id/id_item_diadanh_ten"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_hinhanh" />
+
+    <TextView
+        android:id="@+id/id_item_diadanh_loai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Loại : Danh thắng"
+        android:textColor="#282727"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_ten" />
+
+    <com.codesgood.views.JustifiedTextView
+        android:id="@+id/id_item_diadanh_mota"
+        android:textColor="#f000"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Giới thiệu :
+ Phố cổ Hội An là một thành phố nổi tiếng của tỉnh Quảng Nam, một phố cổ giữ được gần như nguyên vẹn với hơn 1000 di tích kiến trúc từ phố xá, nhà cửa, hội quán, đình, chùa, miếu, nhà thờ tộc, giếng cổ… đến các món ăn truyền thống, tâm hồn của người dân nơi đây. Một lần du lịch Hội An sẽ làm say đắm lòng du khách bởi những nét đẹp trường tồn cùng thời gian, vô cùng mộc mạc, bình dị.
+“Anh muốn kể Lai Viễn Kiều Hội phố
+Đón đợi người sang nghiêng bóng sông chiều
+Mái gỗ cầu cong sơn son chạm trổ
+Mấy trăm năm rồi ngói vẫn ấm màu rêu”"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_loai" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/id_item_diadanh_giave"
+            android:text="Giá vé : Miễn Phí"
+            android:textSize="16sp"
+            android:textColor="#030303"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_mota"
+            />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/id_item_diadanh_ngaymocua"
+            android:text="Ngày mỏ của: Cả tuần"
+            android:textSize="16sp"
+            android:textColor="#050505"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_giave"
+            />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/id_item_diadanh_giomocua"
+            android:text="Giờ mở cửa: 6h00  - 18h00 "
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/id_item_diadanh_ngaymocua"
+            />
+    </LinearLayout>
+</ScrollView>
 </android.support.constraint.ConstraintLayout>

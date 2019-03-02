@@ -3,6 +3,7 @@ package com.example.admin.demomyvietnam.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.almworks.sqlite4java.SQLiteException;
 import com.bumptech.glide.Glide;
 import com.example.admin.demomyvietnam.ActionFragment.ItemByThanhPhoFragment;
 import com.example.admin.demomyvietnam.R;
@@ -59,12 +61,15 @@ public class ThanhphoAdapter extends RecyclerView.Adapter<ThanhphoAdapter.holder
 
                 }else {
                 android.support.v4.app.Fragment selectft=new ItemByThanhPhoFragment();
+                FragmentTransaction ft=((AppCompatActivity) context).getSupportFragmentManager().beginTransaction();
                 Bundle args = new Bundle();
                 args.putInt("idbythanhpho", tp.getId());
                 selectft.setArguments(args);
-                ((AppCompatActivity) context).getSupportFragmentManager().beginTransaction().replace(R.id.id_fragment_container,selectft).commit();
+                ft.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                ft.replace(R.id.id_fragment_container,selectft).commit();
                 }
             }
+
         });
 
     }
