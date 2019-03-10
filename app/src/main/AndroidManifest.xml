@@ -20,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DiadanhActivity"></activity>
+        <activity android:name=".DiadanhActivity" />
+        <activity android:name=".CamnangActivity"></activity>
     </application>
 
 </manifest>

@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.almworks.sqlite4java.SQLiteException;
 import com.bumptech.glide.Glide;
 import com.example.admin.demomyvietnam.ActionFragment.ItemByThanhPhoFragment;
 import com.example.admin.demomyvietnam.R;
@@ -65,7 +64,7 @@ public class ThanhphoAdapter extends RecyclerView.Adapter<ThanhphoAdapter.holder
                 Bundle args = new Bundle();
                 args.putInt("idbythanhpho", tp.getId());
                 selectft.setArguments(args);
-                ft.setCustomAnimations(android.R.anim.slide_in_left,android.R.anim.slide_out_right);
+                ft.setCustomAnimations(android.R.anim.slide_out_right,android.R.anim.slide_in_left);
                 ft.replace(R.id.id_fragment_container,selectft).commit();
                 }
             }

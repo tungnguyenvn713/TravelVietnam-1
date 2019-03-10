@@ -9,8 +9,9 @@ import android.database.sqlite.SQLiteStatement;
 import android.os.Build;
 import android.util.Log;
 
-import com.almworks.sqlite4java.SQLiteConnection;
-import com.almworks.sqlite4java.SQLiteException;
+
+import com.example.admin.demomyvietnam.entity.camnang;
+import com.example.admin.demomyvietnam.entity.dacsan;
 import com.example.admin.demomyvietnam.entity.diadanh;
 import com.example.admin.demomyvietnam.entity.hinhanh;
 import com.example.admin.demomyvietnam.entity.thanhpho;
@@ -100,6 +101,9 @@ public class database extends SQLiteOpenHelper {
        SQLiteDatabase db=this.getWritableDatabase();
        Cursor c;
         c=db.rawQuery("SELECT * FROM HINHANH WHERE iddiadanh ='"+idbydiadanh+"'",null);
+        if(c.getCount()<=0){
+
+        }else {
         c.moveToFirst();
         do{
         //add data :v
@@ -110,6 +114,7 @@ public class database extends SQLiteOpenHelper {
         }while (c.moveToNext());
         c.close();
         Log.d(TAG, "getHinhanh: lll "+ha.size());
+        }
         return ha;
     }
     public List<diadanh> getDiadanh(String idbythanhpho){
@@ -117,6 +122,9 @@ public class database extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor c;
         c=db.rawQuery("SELECT * FROM DIADANH WHERE idthanhpho ='"+idbythanhpho+"'",null);
+        if(c.getCount()<=0){
+
+        }else {
         c.moveToFirst();
         do{
              //add data :v
@@ -134,6 +142,7 @@ public class database extends SQLiteOpenHelper {
         }while (c.moveToNext());
         c.close();
         Log.d(TAG, "getDiadanh: "+diadanhList.size());
+        }
         return diadanhList;
 
     }
@@ -141,8 +150,13 @@ public class database extends SQLiteOpenHelper {
         List<diadanh> diadanhList=new ArrayList<>();
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor c;
+
         c=db.rawQuery("SELECT * FROM DIADANH WHERE iddiadanh ='"+ids+"'",null);
+        if(c.getCount()<=0){
+
+        }else {
         c.moveToFirst();
+
         do{
             //add data :v
             int id=c.getInt(c.getColumnIndex("iddiadanh"));
@@ -159,6 +173,7 @@ public class database extends SQLiteOpenHelper {
         }while (c.moveToNext());
         c.close();
         Log.d(TAG, "getDiadanh: "+diadanhList.size());
+        }
         return diadanhList;
 
     }
@@ -188,6 +203,9 @@ public class database extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getWritableDatabase();
         Cursor c;
         c=db.rawQuery("SELECT * FROM THANHPHO",null);
+        if(c.getCount()<=0){
+
+        }else {
         c.moveToFirst();
         do{
             int id=c.getInt(c.getColumnIndex("idthanhpho"));
@@ -201,6 +219,7 @@ public class database extends SQLiteOpenHelper {
 
         }while (c.moveToNext());
         c.close();
+        }
 
         return tplist;
     }
@@ -233,5 +252,52 @@ public class database extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
+    }
+
+    public List<dacsan> getDacsanbyid(String id) {
+        List<dacsan> dacsans=new ArrayList<>();
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor c;
+        c=db.rawQuery("SELECT * FROM AMTHUC WHERE iddiadanh ='"+id+"'",null);
+        if(c.getCount()<=0){
+
+        }else {
+        c.moveToFirst();
+        do{
+            //add data :v
+            int ids=c.getInt(c.getColumnIndex("idmonan"));
+            String ten=c.getString(c.getColumnIndex("tenmonan"));
+            String gia=c.getString(c.getColumnIndex("giamonan"));
+            byte [] hinh=c.getBlob(c.getColumnIndex("hinhanh"));
+            dacsans.add(new dacsan(ids,ten,gia,hinh));
+
+        }while (c.moveToNext());
+        c.close();
+        Log.d(TAG, "getDiadanh: "+dacsans.size());
+        }
+        return dacsans;
+    }
+
+    public List<camnang> getcamnang() {
+        List<camnang> camnangs=new ArrayList<>();
+        SQLiteDatabase db=this.getWritableDatabase();
+        Cursor c;
+        c=db.rawQuery("SELECT * FROM CAMNANG",null);
+        if(c.getCount()<=0){
+
+        }else {
+            c.moveToFirst();
+            do{
+                //add data :v
+                int ids=c.getInt(c.getColumnIndex("idcamnang"));
+                String ten=c.getString(c.getColumnIndex("tencamnang"));
+                String noidung=c.getString(c.getColumnIndex("noidung"));
+                camnangs.add(new camnang(ids,ten,noidung));
+
+            }while (c.moveToNext());
+            c.close();
+            Log.d(TAG, "getDiadanh: "+camnangs.size());
+        }
+        return camnangs;
     }
 }

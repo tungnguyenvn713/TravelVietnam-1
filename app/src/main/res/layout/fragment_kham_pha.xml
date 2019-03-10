@@ -7,16 +7,27 @@
     tools:context=".ActionFragment.KhamPhaFragment"
     android:orientation="vertical">
     <android.support.design.widget.AppBarLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary">
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_40sdp"
         android:background="?attr/colorPrimary">
-        <SearchView
-            android:queryHint="Tìm kiếm điểm đến"
+        <com.mancj.materialsearchbar.MaterialSearchBar
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+            android:layout_marginLeft="@dimen/_10sdp"
+            app:mt_textColor="#000000"
+            app:mt_hintColor="#2b2b2b"
+            app:mt_hint="Bạn muốn đến đâu ?"
             app:layout_scrollFlags="scroll|enterAlways|snap"
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        </SearchView>
+        </com.mancj.materialsearchbar.MaterialSearchBar>
+    </FrameLayout>
     </android.support.design.widget.AppBarLayout>
     <android.support.v7.widget.RecyclerView
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
@@ -24,3 +35,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
 </android.support.design.widget.CoordinatorLayout>
+
+
+
+<!--<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--xmlns:tools="http://schemas.android.com/tools"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="match_parent"-->
+<!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--tools:context=".ActionFragment.KhamPhaFragment"-->
+<!--android:orientation="vertical">-->
+<!--<android.support.design.widget.AppBarLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?attr/colorPrimary">-->
+    <!--<com.mancj.materialsearchbar.MaterialSearchBar-->
+        <!--android:queryHint="Tìm kiếm điểm đến"-->
+        <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+    <!--</com.mancj.materialsearchbar.MaterialSearchBar>-->
+<!--</android.support.design.widget.AppBarLayout>-->
+<!--<android.support.v7.widget.RecyclerView-->
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+    <!--android:id="@+id/id_re_thanhpho"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
+<!--</android.support.design.widget.CoordinatorLayout>-->

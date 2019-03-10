@@ -8,17 +8,9 @@
     tools:context=".ActionFragment.ItemByThanhPhoFragment">
 
     <android.support.design.widget.AppBarLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary">
-        <SearchView
-            android:queryHint="Tìm kiếm điểm đến"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </SearchView>
     </android.support.design.widget.AppBarLayout>
     <!-- TODO: Update blank fragment layout -->
   <android.support.v7.widget.RecyclerView
