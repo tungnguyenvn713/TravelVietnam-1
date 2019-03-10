@@ -21,7 +21,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".DiadanhActivity" />
+<<<<<<< HEAD
         <activity android:name=".CamnangActivity"></activity>
+=======
+        <activity android:name=".CamnangActivity" />
+        <activity android:name=".ActionFragment.QuanLyActivity"></activity>
+>>>>>>> fist cmt
     </application>
 
 </manifest>
